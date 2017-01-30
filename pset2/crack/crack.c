@@ -17,7 +17,9 @@ bool crypt_cmp(char *word, char *hash, char* salt);
 bool dict_attack(char *dict_loc, char *hash, char* salt);
 bool brute_force(char * str, int index, int max_len, char *hash, char* salt);
 
-
+// excuse the sloppy style, I just wanted to get it to working
+// no motivation to clean it up
+// it does the job, but is ugly as it can be
 int main(int argc, string argv[])
 {
     char *method;
