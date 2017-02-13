@@ -64,6 +64,7 @@ int main(int argc, string argv[])
     
     if (dict_att)
     {
+        printf("Performing dictionary-attack ...\n");
         char *dict_loc = "words2.txt";
         if (dict_attack(dict_loc, salt, hash))
         {
@@ -109,8 +110,6 @@ bool dict_attack(char *dict_loc, char *hash, char* salt)
         printf("Error: could not open dict!");
         return false;
     }
-
-    printf("Performing dictionary-attack ...\n");
     
     // initialize an empty buffer for fgets() to load a string in it
     const int buff_size = 24;
@@ -149,6 +148,11 @@ bool brute_force(char * str, int index, int max_len, char *hash, char* salt)
             {
                 printf("Success: %s\n", str);
                 return true;
+            }
+            else
+            {
+                printf("Brute-force attack failed!");
+                return false;
             }
         }
         else
